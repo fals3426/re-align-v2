@@ -1,0 +1,51 @@
+:root {
+  --brand-sage: #4B8667;
+  --brand-forest: #3C805C;
+  --brand-sun: #FEE575;
+  --brand-gold: #DAB74F;
+  --brand-ink: #0F172A; /* design ink (can also use pure black) */
+  --brand-black: #000000;
+  --brand-white: #FFFFFF;
+  --brand-mist: #F8FAFC;
+  --brand-lavender: #EEF2FF;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--brand-mist);
+  color: var(--brand-ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+p { margin: 0 0 1rem; }
+ul { margin: 0; padding-left: 1.25rem; }
+
+/* Print helpers */
+@media print {
+  nav { display: none !important; }
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  body { background: #ffffff !important; color: #000000 !important; }
+  .print-container { max-width: 800px !important; margin: 0 auto !important; padding: 0 !important; }
+  .page-break { break-before: always; page-break-before: always; }
+  .print-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    font-size: 56px;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.06);
+    letter-spacing: 2px;
+    z-index: 0;
+    pointer-events: none;
+    text-transform: uppercase;
+  }
+}
