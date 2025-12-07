@@ -15,7 +15,7 @@ export default function HomePage() {
           A calm space to breathe, slow down and recenter. Create short, tailored rituals to strengthen inner balance.
         </p>
         <div className="flex justify-center gap-4">
-          <Link href="/auth" className="bg-brand-sage hover:bg-brand-sage/90 text-white px-6 py-3 rounded-xl shadow-lg">Start my journey</Link>
+          <Link href="/auth" className="bg-brand-sage hover:bg-brand-sage/90 text-white px-6 py-3 rounded-xl shadow-lg">Start the Profile Test</Link>
           <Link href="/intro" className="border border-brand-sage text-brand-sage px-6 py-3 rounded-xl hover:bg-brand-sage/10">Learn more</Link>
         </div>
       </section>

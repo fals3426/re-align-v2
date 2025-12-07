@@ -13,8 +13,11 @@ const links = [
 export function Nav() {
   const pathname = usePathname();
   return (
-    <nav className="flex items-center justify-between border-b border-brand-lavender/40 bg-brand-lavender/60 px-4 py-3 text-sm text-brand-ink backdrop-blur">
-      <Link href="/" className="flex items-center gap-2 text-brand-forest hover:opacity-90">
+    <nav className="relative flex items-center justify-center border-b border-brand-lavender/40 bg-brand-lavender/60 px-4 py-3 text-sm text-brand-ink backdrop-blur">
+      <Link
+        href="/"
+        className="absolute left-4 flex items-center gap-2 text-brand-forest hover:opacity-90"
+      >
         <Logo size={28} />
         <span className="font-semibold tracking-tight">Re.Align</span>
       </Link>

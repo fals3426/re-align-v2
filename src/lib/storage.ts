@@ -4,6 +4,7 @@ import type { Journey, User } from "@/lib/types";
 const K_USER = "re-align:user";
 const K_JOURNEY = "re-align:journey";
 const K_QUIZ = "re-align:quiz";
+import type { Preference } from "./types";
 
 export function loadUser(): User | null {
   if (typeof localStorage === "undefined") return null;
@@ -43,4 +44,11 @@ export function loadQuizAnswers(): Record<string, any> | null {
   if (typeof localStorage === "undefined") return null;
   const raw = localStorage.getItem(K_QUIZ);
   return raw ? (JSON.parse(raw) as Record<string, any>) : null;
+}
+
+export function savePreferences(pref: Preference) {
+  if (typeof localStorage === "undefined") return;
+  const current = loadUser();
+  const id = current?.id ?? crypto.randomUUID();
+  saveUser({ ...(current ?? { id }), preference: pref });
 }
